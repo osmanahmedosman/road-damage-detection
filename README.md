@@ -110,7 +110,7 @@ Note: the small-object statistics were computed before I noticed the polygon lin
 
 Precision, recall and F1 are reported at each model's own best-F1 threshold, so mAP is the fairer comparison.
 
-![mAP comparison](results/figures/01_map_comparison.png)
+![mAP comparison](results/01_map_comparison.png)
 
 ### Per-class mAP50-95 (test)
 
@@ -123,7 +123,7 @@ Precision, recall and F1 are reported at each model's own best-F1 threshold, so 
 | pothole | 0.329 | 0.332 | 0.340 |
 | transverse | 0.328 | 0.318 | 0.370 |
 
-![Per-class heatmap](results/figures/02_per_class_heatmap.png)
+![Per-class heatmap](results/02_per_class_heatmap.png)
 
 `block` has only 46 test instances and `transverse` 58, so their scores are noisy.
 
@@ -139,7 +139,7 @@ Precision, recall and F1 are reported at each model's own best-F1 threshold, so 
 - Box quality (IoU) is equal across models. This metric only covers detections with IoU ≥ 0.5, so it cannot fall below 0.5 by construction.
 - At the default threshold about 60% of ground-truth damage is missed, which motivates the per-class thresholds below.
 
-![Matches and IoU](results/figures/05_matches_and_iou.png)
+![Matches and IoU](results/05_matches_and_iou.png)
 
 ### Efficiency
 
@@ -151,14 +151,14 @@ Speed was measured on a shared cloud machine (T4 GPU and its CPU), one run per m
 | YOLO11s | 9.42M | 21.4 | 19.2 MB | 37.9 MB | 10.0 | 171.9 | 149.2 |
 | YOLO26s | 9.47M | 20.8 | 20.3 MB | 38.2 MB | 11.9 | 177.6 | 150.4 |
 
-![Accuracy vs latency](results/figures/04_accuracy_vs_speed.png)
-![Efficiency](results/figures/06_efficiency.png)
+![Accuracy vs latency](results/04_accuracy_vs_speed.png)
+![Efficiency](results/06_efficiency.png)
 
 ONNX is about 13 to 15% faster than PyTorch on CPU, but its file is roughly twice the `.pt` size. On my own machine the deployed ONNX model ran at about 174 to 184 ms per image (about 6 FPS).
 
 ### Error analysis (YOLO26s, test set)
 
-![Confusion matrix](results/figures/confusion_matrix_normalized.png)
+![Confusion matrix](results/confusion_matrix_normalized.png)
 
 This matrix was computed at a near-zero confidence threshold, so it shows what the model *can* find, not deployment behaviour.
 
@@ -269,9 +269,12 @@ Training and evaluation ran on Kaggle (Tesla T4) with Ultralytics 8.4.191 and Py
 Dataset: Roboflow Universe "Road Damage". Models: Ultralytics YOLO.
 
 
+## Author
+
 **Osman Ahmed Osman**
 AI & Data Solutions Engineer
 
 - [GitHub](https://github.com/osmanahmedosman)
 - [LinkedIn](https://www.linkedin.com/in/osmanahmedosman/)
 - [Kaggle](https://www.kaggle.com/osmanahmedosman)
+
