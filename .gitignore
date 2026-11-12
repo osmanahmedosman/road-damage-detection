@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+models/*.pt
+models/*.onnx
+runs/
+road_damage*/
+*.zip
+.ipynb_checkpoints/
